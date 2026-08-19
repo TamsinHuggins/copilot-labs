@@ -1,0 +1,5 @@
+.github/
+.venv/
+dashboard.html
+__pycache__/
+*.pyc
