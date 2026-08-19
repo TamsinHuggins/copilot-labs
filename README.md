@@ -1,47 +1,48 @@
-# Spotify Data Explorer
+# GitHub Copilot Tutorial : Spotify Dashboard
 
 An interactive, not-very-good-yet Spotify dashboard built with **Plotly Express**. You will use Copilot to explore the codebase, understand how it works, and improve it.
 
 ---
 
-## Part 1: Explore the Codebase with Copilot
+## Introduction
 
-Before making any changes, use Copilot to understand the project.
+### Copilot Modes / Selecting an Agent
 
-### GitHub Copilot Commands
+Copilot can operate in different modes depending on the kind of help you need. Understanding the difference between these modes helps you choose the right workflow for a task and avoid giving Copilot too much or too little autonomy.
 
-- **`#` (context)** — attaches something to your message so Copilot has more information to work with. Think of it as _giving Copilot something to read_. Examples: `#codebase`, `#file`, `#selection`.
+#### Agent, Ask, and Plan modes
 
-- **`/` (commands)** — tells Copilot _what to do_. It triggers a specific action. Examples: `/explain`, `/fix`, `/tests`.
+![alt text](image.png)
 
-  > **Why use `/explain` instead of just typing "explain this"?** According to the GitHub Copilot docs, slash commands exist to _"avoid writing complex prompts for common scenarios."_ `/explain` is a predefined shortcut — Copilot knows exactly what it means, what context to use (your current selection or open file), and how to format the response. It's more reliable and faster than natural language for tasks you do repeatedly.
+- **Agent Agent** is best when you want Copilot to take action across files, make code changes, run commands, and work through a task with minimal back-and-forth.
+- **Ask Agent** is best for quick questions and explanations. It behaves more like a conversational assistant and is useful when you want to understand code, debug an error, or learn the best approach before changing anything.
+- **Plan Agent** is best when you want Copilot to think through a task before making changes. It helps you outline the steps, identify files to touch, and confirm the approach before implementation begins.
 
-You can combine them: `/explain #file:visualization.py` means "explain the contents of this file".
-
-Try these in the **Copilot Chat** panel (`Ctrl+Shift+I`):
-
-| Copilot feature | How to use it                               | Try asking...                                             |
-| --------------- | ------------------------------------------- | --------------------------------------------------------- |
-| `#codebase`     | Includes your **entire project** as context | `#codebase explain the overall structure of this project` |
-| `#file`         | Attaches a specific file as context         | `#file:data_loader.py what does this module do?`          |
-| `/explain`      | Explains **selected code** in the editor    | Select a function, then type `/explain` in chat           |
-| Inline chat     | Opens chat **at your cursor** in the file   | Press `Ctrl+I` inside any file                            |
-
-**Your first task:** Use `#codebase` to explore the project, then use Copilot to write the **Project Structure** section below. Try this prompt:
-
-> `#codebase generate a markdown project structure tree for this repo with a one-line description for each file`
-
-Then paste Copilot's output into the empty section below.
-
-## Project Structure
-
-<!-- Task: use Copilot to fill this section in — see instructions above -->
+> These different modes are an agent is essentially a combination of instructions and tools. In practice, the agent you select determines how Copilot behaves.
 
 ---
 
-## Running the App
+### Copilot Commands
 
-> **Lab task:** Use Copilot to figure out how to run this project
+- **`#` (context)** — attaches something to your message so Copilot has more information to work with. Think of it as _giving Copilot something to read_. Examples: `#codebase`, `#file`, `#selection`.
+
+![alt text](image-1.png)
+
+- **`/` (commands)** — tells Copilot _what to do_. It triggers a specific action. Examples: `/explain`, `/fix`, `/tests`.
+
+![alt text](image-2.png)
+
+> **Why use `/explain` instead of just typing "explain this"?** According to the GitHub Copilot docs, slash commands exist to _"avoid writing complex prompts for common scenarios."_ `/explain` is a predefined shortcut — Copilot knows exactly what it means, what context to use (your current selection or open file), and how to format the response. It's more reliable and faster than natural language for tasks you do repeatedly.
+
+You can combine them: `/explain #file:visualization.py` means "explain the contents of this file".
+
+---
+
+## Task 1: Have Copilot guide you through running the app
+
+Before making any changes, it helps to understand what the project is supposed to do. In this task, you will use Copilot to identify the entry point, install any dependencies, run the app, and confirm that the dashboard renders correctly.
+
+> **Lab task:** Use Copilot to figure out how to run this project.
 >
 > Open Copilot Chat and ask something like:
 >
@@ -53,85 +54,87 @@ Then paste Copilot's output into the empty section below.
 >
 > `@terminal how do I run this project?`
 
----
-
-## ✅ Checkpoint — Ensure you can run the app and view the dashboard
-
-## Explaining the Codebase
-
-Take some time to explore the code using Copilot. Use `/explain` on selected code, `#file` in Chat, or `Ctrl+I` for inline explanations.
-
-Use Copilot to answer these questions:
-
-**Packages**
-
-- What does each package do, and which part of the app would break without it?
-
-**How the files relate**
-
-- How does `app.py` get access to the functions in `data_loader.py` and `visualization.py`?
-- If you wanted to add a new chart, which file would you edit — and what changes would be needed in the others?
-
-## 💬 Checkpoint — Opportunity to discuss with the group any parts of the code that are new to participants.
+## ✅ Checkpoint — Ensure you can run the app and view the dashboard.
 
 ---
 
-## Part 2: Repository-Wide Copilot Instructions
+## Task 2: Explore the Codebase Structure with Copilot
+
+Now that the app is running, the next step is to understand how the project is structured and how the code fits together. In this task, you will use Copilot to map the repository and explain the purpose of the main files.
+
+Set your Copilot to Ask mode. Try these in the **Copilot Chat** panel (`Ctrl+Shift+I`):
+
+| Copilot feature | How to use it                               | Try asking...                                             |
+| --------------- | ------------------------------------------- | --------------------------------------------------------- |
+| `#codebase`     | Includes your **entire project** as context | `#codebase explain the overall structure of this project` |
+| `#file`         | Attaches a specific file as context         | `#file:data_loader.py what does this module do?`          |
+| `/explain`      | Explains **selected code** in the editor    | Select a function, then type `/explain` in chat           |
+| Inline chat     | Opens chat **at your cursor** in the file   | Press `Ctrl+I` inside any file                            |
+
+> **Lab task:** Use `#codebase` to explore the project, then use Copilot to write the **Project Structure** section below.
+>
+> Try this prompt:
+>
+> `#codebase generate a markdown project structure tree for this repo with a one-line description for each file`
+
+## ✅ Checkpoint — Confirm that you can explain the purpose of the main files and how they fit together in the project.
+
+---
+
+## Task 3: Explaining the Code
+
+Once the project structure is clear, the next step is to understand how the code works internally. Copilot can help you trace the data flow, explain functions, and show how the files connect to one another.
+
+### Lab: Explain the Code
+
+> Take some time to explore the code using Copilot. Use `/explain` on selected code, `#file` in Chat, or `Ctrl+I` for inline explanations.
+>
+> Use Copilot to answer these questions:
+>
+> **Packages**
+>
+> - What does each package do, and which part of the app would break without it?
+>
+> **How the files relate**
+>
+> - How does `app.py` get access to the functions in `data_loader.py` and `visualization.py`?
+> - If you wanted to add a new chart, which file would you edit — and what changes would be needed in the others?
+
+## ✅ Checkpoint — Discuss any parts of the code that were unfamiliar and confirm that you understand how the app is structured.
+
+---
+
+## Task 4: Repository-Wide Copilot Instructions
 
 GitHub Copilot supports a special file — `.github/copilot-instructions.md` — that lets you give Copilot persistent, repository-wide guidance. Any natural language instructions you write there are **automatically included in every Copilot request** made in the context of this repo, without you needing to repeat them in every prompt.
 
-You can verify instructions were applied by expanding the **References** list at the top of any Copilot Chat response and checking that `.github/copilot-instructions.md` appears.
+Repository-wide instructions are especially useful in team settings where consistent quality, security, and documentation standards matter. They help ensure that Copilot responds with the same conventions across every file and every developer prompt.
 
-### Task: Set a colour theme
+### Specify a Docstring Convention
 
-1. Create the file `.github/copilot-instructions.md` in this project (create the `.github` folder if it doesn't exist).
+In a bank data science team, repository-wide Copilot instructions are a practical way to enforce shared standards without relying on every developer to remember them. For example, a team might add instructions like:
 
-2. Add the following instruction:
+- **Docstring format:** "All functions must include a NumPy-style docstring with `Parameters`, `Returns`, and `Raises` sections."
+- **Security:** "Never suggest hardcoded credentials, connection strings, or API keys — always use environment variables or a secrets manager."
+- **Compliance:** "Any function that trains or scores a model must include a docstring referencing its intended regulatory scope, such as IFRS 9, Basel III, or model governance controls."
+- **Data handling:** "Never log raw customer or transaction data. Always mask or redact personally identifiable information before writing to logs or console output."
+- **Auditability:** "All data transformation functions should document input assumptions, output schema, and any transformations applied to the source data."
 
-   ```markdown
-   All Plotly charts in this project must use a pink and purple colour theme.
-   Use colours from this palette: #FF69B4 (hot pink), #DA70D6 (orchid), #9B59B6 (purple), #6C3483 (dark purple).
-   Never use the default Plotly colour sequence.
-   ```
+> **Lab task:** Create a Copilot instructions file that enforces a docstring style.
+>
+> 1. Click the settings icon in the top right of the Copilot Chat panel, select **Instructions**, then click **Generate Instructions**. Alternatively, start a chat with `/create-instructions`.
+> 2. When prompted, instruct Copilot to enforce that every new function has a docstring that says `"[your-name] wuz here"`.
+> 3. Check the `.github` folder to confirm that your instructions file has been created.
+> 4. Create a new function using Copilot, then type `"""` under the function definition to start a docstring.
+>
+> **Reflection:** Has the instructions file altered the behavior of Copilot?
 
-3. Save the file — instructions take effect immediately with no restart required.
+## ✅ Checkpoint — Confirm that the repository instructions file exists and that Copilot is now applying those standards to new code suggestions.
 
-### Task: Test that it works
+## Task 5: Improve the Application with Copilot
 
-Without specifying any colours in your prompt, ask Copilot to add a new chart. For example, in Copilot Chat:
+Once the app is running and the code structure is clear, the next step is to improve the actual user experience. The current visualisations are functional, but they do not always follow strong data visualisation principles: some charts may be cluttered, difficult to interpret, or poorly matched to the story the data is trying to tell. This is a good opportunity to use Copilot to critique and redesign the visuals in a more thoughtful, user-friendly way.
 
-> `#file:visualization.py add a new function that creates a bar chart showing the top 10 most popular tracks by average popularity`
+### Lab: Develop the Application
 
-Then check `visualization.py` — the generated chart should use pink/purple colours without you having to ask. If Copilot didn't follow the instructions, expand the References list in the Chat response and confirm the instructions file is listed.
-
-Use these prompts while working through the codebase. Highlight code and open Copilot Chat.
-
-### Understanding Code
-
-> "Explain what this function does line by line."
-
-> "What does `melt()` do here and why are we using it?"
-
-> "What is `index_col=0` doing in `pd.read_csv`?"
-
-> "Why do we use `os.path.dirname(__file__)` instead of a relative path?"
-
-### Improving Code
-
-> "Add a docstring to this function."
-
-> "Rewrite this groupby expression to be easier to read."
-
-> "How can I add error handling if the CSV file doesn't exist?"
-
-> "Can you suggest a more descriptive variable name for `melted`?"
-
-### Extending the App
-
-> "How do I add a new chart showing the top 10 most popular tracks?"
-
-> "How do I let the user pick which audio features to compare on the bar chart?"
-
-> "How do I add a data table below the charts that shows the filtered results?"
-
-> "How do I cache the `load_data()` call so the CSV is only read once?"
+> Use Copilot to generate better Plotly charts by writing clear, descriptive prompts to develop the code.
