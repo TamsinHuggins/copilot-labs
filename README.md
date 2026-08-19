@@ -39,12 +39,15 @@ Then paste Copilot's output into the empty section below.
 
 ## Running the App
 
-```bash
-pip install -r requirements.txt
-python src/app.py
-```
-
-This generates a `dashboard.html` file in the project root and opens it in your default browser. No server required.
+> **Lab task:** Use Copilot to figure out how to run this project — don't skip ahead!
+>
+> Open Copilot Chat (`Ctrl+Shift+I`) and ask:
+>
+> `#codebase what is the entry point of this project? What do I need to install, how do I run it, and what should I see if it is working correctly?`
+>
+> Copilot will tell you which file to run, what command to use, and what to expect as output. Follow its instructions in the VS Code terminal (`` Ctrl+` ``).
+>
+> **Hint:** if Copilot mentions a file or command you don't understand, ask a follow-up — for example: _"what does `python src/app.py` actually do?"_
 
 ---
 
