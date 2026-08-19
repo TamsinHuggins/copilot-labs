@@ -1,25 +1,50 @@
 # Spotify Data Explorer
 
-An interactive Spotify dashboard built with **Streamlit** and **Plotly Express**, designed for teaching junior data scientists about Python and GitHub Copilot.
+An interactive, not-very-good-yet Spotify dashboard built with **Plotly Express**. You will use Copilot to explore the codebase, understand how it works, and improve it.
+
+---
+
+## Part 1: Explore the Codebase with Copilot
+
+Before making any changes, use Copilot to understand the project.
+
+### `#` vs `/` — what's the difference?
+
+- **`#` (context)** — attaches something to your message so Copilot has more information to work with. Think of it as _giving Copilot something to read_. Examples: `#codebase`, `#file`, `#selection`.
+- **`/` (commands)** — tells Copilot _what to do_. It triggers a specific action. Examples: `/explain`, `/fix`, `/tests`.
+- **`@` (agents)** — routes your message to a specialised agent with extra tools or knowledge. Examples: `@github` (search issues/PRs), `@vscode` (editor settings and commands).
+
+You can combine them: `/explain #file:visualization.py` means "explain the contents of this file".
+
+Try these in the **Copilot Chat** panel (`Ctrl+Shift+I`):
+
+| Copilot feature | How to use it                               | Try asking...                                             |
+| --------------- | ------------------------------------------- | --------------------------------------------------------- |
+| `#codebase`     | Includes your **entire project** as context | `#codebase explain the overall structure of this project` |
+| `#file`         | Attaches a specific file as context         | `#file:data_loader.py what does this module do?`          |
+| `/explain`      | Explains **selected code** in the editor    | Select a function, then type `/explain` in chat           |
+| Inline chat     | Opens chat **at your cursor** in the file   | Press `Ctrl+I` inside any file                            |
+
+**Your first task:** Use `#codebase` to explore the project, then use Copilot to write the **Project Structure** section below. Try this prompt:
+
+> `#codebase generate a markdown project structure tree for this repo with a one-line description for each file`
+
+Then paste Copilot's output into the empty section below.
 
 ## Project Structure
 
-```
-├── data/
-│   └── spotify.csv          # Raw dataset
-├── src/
-│   ├── data_loader.py       # Loads and filters the DataFrame
-│   ├── visualization.py     # Plotly chart functions
-│   └── app.py               # Streamlit UI entry point
-└── requirements.txt
-```
+<!-- Task: use Copilot to fill this section in — see instructions above -->
+
+---
 
 ## Running the App
 
 ```bash
 pip install -r requirements.txt
-streamlit run src/app.py
+python src/app.py
 ```
+
+This generates a `dashboard.html` file in the project root and opens it in your default browser. No server required.
 
 ---
 
