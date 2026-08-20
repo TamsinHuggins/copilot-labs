@@ -104,7 +104,27 @@ Once the project structure is clear, the next step is to understand how the code
 
 ---
 
-## Task 4: Repository-Wide Copilot Instructions
+## Task 4: Improve the Application with Copilot
+
+Once the app is running and the code structure is clear, the next step is to improve the actual user experience. The current visualisations are functional, but they do not always follow strong data visualisation principles: some charts may be cluttered, difficult to interpret, or poorly matched to the story the data is trying to tell. This is a good opportunity to use Copilot to critique and redesign the visuals in a more thoughtful, user-friendly way.
+
+### Lab: Develop the Application
+
+> Use Copilot to generate better Plotly charts by writing clear, descriptive prompts to develop the code.
+>
+> You can try a few different approaches:
+>
+> - Write a comment in the file describing the chart you want, then let Copilot generate the code underneath it.
+> - Use the inline code suggestions in the editor to accept small, targeted completions while you are editing the visualisation code.
+> - Open a chat in Agent mode and ask Copilot to implement a specific chart or improvement across the relevant files.
+>
+> Try experimenting with each of these approaches and compare the results.
+
+## ✅ Checkpoint — Reflect on which approach produced the clearest improvement and how the visualisations became easier to interpret.
+
+---
+
+## Task 5: Repository-Wide Copilot Instructions
 
 GitHub Copilot supports a special file — `.github/copilot-instructions.md` — that lets you give Copilot persistent, repository-wide guidance. Any natural language instructions you write there are **automatically included in every Copilot request** made in the context of this repo, without you needing to repeat them in every prompt.
 
@@ -112,13 +132,12 @@ Repository-wide instructions are especially useful in team settings where consis
 
 ### Specify a Docstring Convention
 
-In a bank data science team, repository-wide Copilot instructions are a practical way to enforce shared standards without relying on every developer to remember them. For example, a team might add instructions like:
+In a data science team, repository-wide Copilot instructions are a practical way to enforce shared standards without relying on every code contributer to remember them. For example, a team might add instructions like:
 
 - **Docstring format:** "All functions must include a NumPy-style docstring with `Parameters`, `Returns`, and `Raises` sections."
 - **Security:** "Never suggest hardcoded credentials, connection strings, or API keys — always use environment variables or a secrets manager."
 - **Compliance:** "Any function that trains or scores a model must include a docstring referencing its intended regulatory scope, such as IFRS 9, Basel III, or model governance controls."
 - **Data handling:** "Never log raw customer or transaction data. Always mask or redact personally identifiable information before writing to logs or console output."
-- **Auditability:** "All data transformation functions should document input assumptions, output schema, and any transformations applied to the source data."
 
 > **Lab task:** Create a Copilot instructions file that enforces a docstring style.
 >
@@ -130,11 +149,3 @@ In a bank data science team, repository-wide Copilot instructions are a practica
 > **Reflection:** Has the instructions file altered the behavior of Copilot?
 
 ## ✅ Checkpoint — Confirm that the repository instructions file exists and that Copilot is now applying those standards to new code suggestions.
-
-## Task 5: Improve the Application with Copilot
-
-Once the app is running and the code structure is clear, the next step is to improve the actual user experience. The current visualisations are functional, but they do not always follow strong data visualisation principles: some charts may be cluttered, difficult to interpret, or poorly matched to the story the data is trying to tell. This is a good opportunity to use Copilot to critique and redesign the visuals in a more thoughtful, user-friendly way.
-
-### Lab: Develop the Application
-
-> Use Copilot to generate better Plotly charts by writing clear, descriptive prompts to develop the code.
