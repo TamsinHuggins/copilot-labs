@@ -136,7 +136,6 @@ In a data science team, repository-wide Copilot instructions are a practical way
 
 - **Docstring format:** "All functions must include a NumPy-style docstring with `Parameters`, `Returns`, and `Raises` sections."
 - **Security:** "Never suggest hardcoded credentials, connection strings, or API keys — always use environment variables or a secrets manager."
-- **Compliance:** "Any function that trains or scores a model must include a docstring referencing its intended regulatory scope, such as IFRS 9, Basel III, or model governance controls."
 - **Data handling:** "Never log raw customer or transaction data. Always mask or redact personally identifiable information before writing to logs or console output."
 
 > **Lab task:** Create a Copilot instructions file that enforces a docstring style.
