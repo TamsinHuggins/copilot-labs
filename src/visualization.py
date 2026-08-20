@@ -42,3 +42,17 @@ def plot_avg_audio_features(df):
     )
     fig.update_layout(xaxis_tickangle=-45)
     return fig
+
+
+def plot_genre_energy_vs_danceability():
+
+    fig = px.scatter(
+        df,
+        x="energy",
+        y="danceability",
+        color="track_genre",
+        hover_data=["track_name", "artists"],
+        title="Energy vs Danceability by Genre",
+        opacity=0.6,
+    )
+    return fig

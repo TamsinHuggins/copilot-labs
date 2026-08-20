@@ -9,6 +9,7 @@ from visualization import (
     plot_popularity_histogram,
     plot_energy_vs_danceability,
     plot_avg_audio_features,
+    plot_genre_energy_vs_danceability,
 )
 
 
@@ -48,6 +49,7 @@ def main():
     figures = [
         plot_popularity_histogram(df),
         plot_energy_vs_danceability(df),
+        plot_genre_energy_vs_danceability(df),
         plot_avg_audio_features(df),
     ]
 
